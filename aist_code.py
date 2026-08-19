@@ -15,34 +15,6 @@ print(ds)
 print(ds["test"].column_names)
 print(ds["test"].features)
 
-"""
-STEP 0 — FULL SETUP FROM SCRATCH
-Hindi-English Code-Switched ASR Robustness Benchmark
-
-Run this ONCE (per Colab account, or once and share the resulting folder
-via Drive to the other two accounts) before running any model script.
-
-What this does:
-1. Installs dependencies
-2. Loads MUCS-Hinglish dataset (train/test) and shows you what columns exist
-3. Picks a fixed subsample of clips (reproducible via seed)
-4. Downloads a small noise set (MUSAN subset via Hugging Face) for
-   traffic / babble / indoor noise
-5. Builds the exact folder structure from the plan:
-     hinglish_robustness/
-       clean/
-       traffic/{15db,10db,5db}/
-       babble/{15db,10db,5db}/
-       indoor/{15db,10db,5db}/
-       metadata.csv
-6. Writes clean + noisy wav files to disk so every model script downstream
-   just reads files — no repeated dataset/noise loading, no mismatch risk
-   across the 3 Colab accounts.
-
-Run the cells top to bottom. Read the printed dataset inspection output
-before continuing to Part 3 — you likely need to adjust the column-name
-guesses (AUDIO_COL / TEXT_COL) to match reality.
-"""
 
 # ============================================================
 # PART 0 — INSTALL
